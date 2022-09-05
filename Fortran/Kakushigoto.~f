@@ -1,0 +1,29 @@
+        program kakushigoto
+        implicit none
+
+        integer cantidad, i,cant;
+        Real precio, totalPr, total;
+        character (80) nombre
+        total = 0
+        write(*,*) 'Ingrese cuantos productos comprara'
+        read(*,*)cantidad
+        i=0
+        do while (i<cantidad)
+        write(*,*) 'Ingrese el nombre del producto'
+        read(*,*)nombre
+        write(*,*) 'Ingrese la cantidad de productos'
+        read(*,*)cant
+        write(*,*) 'Ingrese precio del producto'
+        read(*,*)precio
+        totalPr = precio + cant
+        if (totalPr>1000) then
+        totalPr = totalPr - (totalPr*0.15)
+        end if
+        total = total+totalPr
+        i = i+1
+        end do
+        
+        write(*,*) 'El total es: '
+        write(*,*) total
+        pause
+        end program kakushigoto
